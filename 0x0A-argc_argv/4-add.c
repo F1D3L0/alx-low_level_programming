@@ -1,7 +1,6 @@
 #include "main.h"
 #include  <stdio.h>
-#include  <stdlib.h>
-#include  <string.h>
+#include <stdlib.h>
 /**
  * main - Prints the sum of args positive numbers
  * @argc: argument count
@@ -12,29 +11,23 @@
 
 int main(int argc, char *argv[])
 {
-int i;
-unsigned int k, sum = 0;
-char *e;
-if (argc > 1)
-{
+int result = 0, num, i, j, k;
 for (i = 1; i < argc; i++)
 {
-e = argv[i];
-for (k = 0; k < strlen(e); k++)
+for (j = 0; argv[i][j] != '\0'; j++)
 {
-if (e[k] < 48 || e[k] > 57)
+if (argv[i][j] > '9' || argv[i][j] < '0')
 {
-printf("Error\n");
-return (1);
+printf("%s\n", "Error");
+return (0);
 }
 }
-sum += atoi(e);
-e++;
 }
-printf("%d\n", sum);
-}
-else
+for (k = 1; k < argc; k++)
 {
-printf("0\n");
+num = atoi(argv[k]);
+result += num;
 }
+printf("%d\n", result);
+return (0);
 }
