@@ -1,1 +1,1 @@
-static libraries
+creation of static library
